@@ -1,0 +1,33 @@
+Project 5 Markov Decision Process
+Contributors: David Brauer
+
+--What I learned from this assignment--
+I learned how to Implement Bellmans Equation to find the optimal policy and the value for the state space and reward function given. I was able to come up with a linear programming solution but didnt have the time to finish the implementation.
+
+--Favorite thing about class--
+My favorite thing about the class has been Dr. Goldsmiths willingness to help students when they're struggling with their assignments. As well as having the chance to be introduced to Artificial Intelligence, my favorite subject in computer science thus far.
+
+--How to--
+When running my MDP you first run make on the command line to build the program. I also have a
+built in clean function to discard object files. This was mainly used for debugging. Once built,
+type ./MarkovDecision on the command line to run and recieve the output.I structured my program
+to contain a main file, DicisionSource, in which the main class structures are initialized and
+iterated through. There are two seperate loops inside main. The first finds the Optimal policy,
+no discount, with a horizon of 6; the second is used to find the optimal policy with infinite 
+horizon and discount.
+
+--state--
+The state class is a friend function of MDP which creates structures that are used to hold the 
+value of a state before and after movement, as well as the movement binary and reward. It holds
+a function getDir that can get the policy that is displayed after the final iteration of the 
+bellmans equation.
+
+--MDP--
+My MDP class holds the implementations of the bellmans equations, as well as a few supporting 
+functions used in the bellmans equation. The constructor function initializes the states and their
+respective values and pushes them into a vector to be stored. The bellmans equation function 
+implements the equation given in class for finding the value for the point after using the optimal 
+move. The four direction functions are used along with the 4 digit binary stored in the class state
+to check if the movement is possible or if there is no state in that direction it returns itself.
+The print function displays the map as a grid with the values within, along with displaying the
+optimal policy for that grid.
